@@ -16,7 +16,7 @@ const storePost = async (urls) => {
 
   try {
     const snapshot = await db.collection("posts").add(post);
-    console.log(snapshot);
+    console.log("Post Created successfully");
     successBox.style.display = "block";
     setTimeout(() => (successBox.style.display = "none"), 5000);
   } catch (error) {
@@ -77,7 +77,15 @@ form.addEventListener("submit", (e) => {
       };
       const uploadTask = storage
         .ref()
-        .child("images/" + file.name)
+        .child(
+          `images/${file.name}-${
+            new Date(Date.now())
+              .toLocaleString()
+              .split(", ")
+              .join("-")
+              .split(" ")[0]
+          }`
+        )
         .put(file, metadata);
 
       // Listen for state changes, errors, and completion of the upload.
