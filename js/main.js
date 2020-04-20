@@ -4,6 +4,21 @@ const successBox = document.querySelector(".success-box");
 const previewImg = document.querySelector(".upload-preview img");
 const previewTxt = document.querySelector(".upload-preview span");
 
+const storePost = async (url) => {
+  const post = {
+    title: form.title.value,
+    description: form.description.value,
+    image: `${url}`,
+  };
+
+  try {
+    const snapshot = await db.collection("posts").add(post);
+    console.log(snapshot);
+  } catch (error) {
+    console.log("Error Creating Post....", error);
+  }
+};
+
 form.image.addEventListener("change", () => {
   const file = form.image.files[0];
 
@@ -45,11 +60,11 @@ form.addEventListener("submit", (e) => {
       function () {
         // Upload completed successfully, now we can get the download URL
         uploadTask.snapshot.ref.getDownloadURL().then(function (downloadURL) {
-          console.log("File available at", downloadURL);
           successBox.style.display = "block";
           //   const preview = document.createElement("img");
           //   preview.setAttribute("src", downloadURL);
           //   successBox.appendChild(preview);
+          storePost(downloadURL);
           setTimeout(() => (successBox.style.display = "none"), 5000);
         });
       }

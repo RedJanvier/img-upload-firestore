@@ -1,0 +1,52 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background: rgb(58, 207, 207);
+}
+nav .links {
+  list-style-type: none;
+  display: flex;
+}
+nav .links li {
+  padding: 5px;
+}
+header {
+  display: flex;
+  width: 100%;
+}
+header img {
+  width: 25%;
+}
+.posts-list {
+  list-style-type: none;
+  margin: 20px;
+}
+.posts-list .post {
+  width: 100%;
+  margin: 20px 2px;
+  padding: 20px;
+  background: rgb(238, 238, 238);
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+.post .img {
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+}
+.post img {
+  width: 100%;
+}
+.post h3 {
+  width: 100%;
+  max-width: 400px;
+}
