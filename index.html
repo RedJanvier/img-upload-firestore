@@ -8,6 +8,10 @@
 </head>
 <body>
     <main>
+        <div class="error-box box"></div>
+        <div class="success-box box">
+            <p>Image uploaded successfully!</p>
+        </div>
         <div class="upload-section">
             <form class="upload-form">
                 <div class="form-input">
@@ -26,6 +30,25 @@
             </span>
         </div>
     </main>
+    <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-storage.js"></script>
+    
+    <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+        apiKey: "AIzaSyDi1uoXsXmf7S94-8itejnm1KbZJxatamU",
+        authDomain: "social-ape-1.firebaseapp.com",
+        databaseURL: "https://social-ape-1.firebaseio.com",
+        projectId: "social-ape-1",
+        storageBucket: "social-ape-1.appspot.com",
+        messagingSenderId: "227625113788",
+        appId: "1:227625113788:web:4934e4e0987597d43718b9",
+        measurementId: "G-MSFJ3QT5BK"
+    };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const storage = firebase.storage();
+    </script>
     <script src="./js/main.js"></script>
 </body>
 </html>
