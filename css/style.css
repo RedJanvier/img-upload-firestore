@@ -57,13 +57,49 @@ main {
 }
 .upload-preview {
   width: 440px;
-  display: flex;
-  padding: 10px;
+  display: grid;
+  grid-gap: 14px;
   margin: 4px 2px;
   overflow: hidden;
-  align-items: center;
-  justify-content: center;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
   border: 1px solid rgb(136, 1, 1);
+}
+.upload-preview .image {
+  height: 260px;
+  width: 100%;
+  overflow: hidden;
+}
+.upload-preview.double,
+.upload-preview.triple {
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 2fr;
+}
+.upload-preview.double .image:nth-child(1),
+.upload-preview.double .image:nth-child(1) {
+  grid-area: first;
+}
+.upload-preview.triple .image:nth-child(2) {
+  grid-area: middl;
+}
+.upload-preview.double .image:nth-child(2),
+.upload-preview.triple .image:nth-child(3) {
+  grid-area: last;
+}
+.upload-preview.double .image img,
+.upload-preview.triple .image img {
+  width: 130%;
+  object-fit: cover;
+}
+.upload-preview.triple {
+  grid-template-areas:
+    "first middl"
+    "last  last";
+}
+.upload-preview.double {
+  grid-template-areas:
+    "first last"
+    "first last";
 }
 .upload-preview span {
   color: rgb(136, 1, 1);
