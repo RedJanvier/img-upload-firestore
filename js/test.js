@@ -24,7 +24,9 @@ if (!location.href.includes("single.html")) {
           doc.data().image
         )}&description=${encodeURIComponent(
           doc.data().description
-        )}" class="post_title">${doc.data().title}</a>
+        )}" class="post_title"><div class="img"><img src="${
+          doc.data().image
+        }"/></div><h3>${doc.data().title}</h3></a>
     </li>`;
       });
       postsList.innerHTML = html;
