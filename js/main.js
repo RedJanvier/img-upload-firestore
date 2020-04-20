@@ -11,12 +11,14 @@ const storePost = async (urls) => {
   };
 
   urls.forEach((url, i) => {
-    i > 0 ? (post[`image${i}`] = url) : (post["image"] = url);
+    i === 0 ? (post["image"] = url) : (post[`image${i + 1}`] = url);
   });
 
   try {
     const snapshot = await db.collection("posts").add(post);
     console.log(snapshot);
+    successBox.style.display = "block";
+    setTimeout(() => (successBox.style.display = "none"), 5000);
   } catch (error) {
     console.log("Error Creating Post....", error);
   }
@@ -86,7 +88,6 @@ form.addEventListener("submit", (e) => {
         function () {
           // Upload completed successfully, now we can get the download URL
           uploadTask.snapshot.ref.getDownloadURL().then(function (downloadURL) {
-            successBox.style.display = "block";
             //   const preview = document.createElement("img");
             //   preview.setAttribute("src", downloadURL);
             //   successBox.appendChild(preview);
@@ -94,7 +95,6 @@ form.addEventListener("submit", (e) => {
             if (i == images.length - 1) {
               storePost(downloadURLs);
             }
-            setTimeout(() => (successBox.style.display = "none"), 5000);
           });
         }
       );

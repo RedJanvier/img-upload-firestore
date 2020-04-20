@@ -14,11 +14,16 @@ if (!location.href.includes("single.html")) {
     .then(function (querySnapshot) {
       let html = "";
       querySnapshot.forEach(function (doc) {
+        let imagesType = 0;
+        doc.data().image && imagesType++;
+        doc.data().image2 && imagesType++;
+        doc.data().image3 && imagesType++;
+
         html += `
     <li class="post" data-id"${doc.id}">
-        <a href="/test-preview-single.html?id=${encodeURIComponent(
-          doc.id
-        )}&title=${encodeURIComponent(
+        <a href="/test-preview-single.html?images=${encodeURIComponent(
+          imagesType
+        )}id=${encodeURIComponent(doc.id)}&title=${encodeURIComponent(
           doc.data().title
         )}&image=${encodeURIComponent(
           doc.data().image
