@@ -1,0 +1,113 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+nav {
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background: rgb(58, 207, 207);
+}
+nav .links {
+  list-style-type: none;
+  display: flex;
+}
+nav .links li {
+  padding: 5px;
+}
+body {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main {
+  position: absolute;
+  top: 60px;
+  background: rgba(109, 179, 201, 0.76);
+  padding: 3em;
+  font-size: 18px;
+}
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: -50px;
+  left: -1px;
+  padding: 20px 180px;
+  z-index: 2;
+  display: none;
+}
+.error-box {
+  color: rgb(136, 1, 1);
+  background-color: rgb(223, 157, 157);
+  border: 2px solid rgb(136, 1, 1);
+}
+.success-box {
+  color: rgb(1, 136, 12);
+  background-color: rgb(159, 223, 157);
+  border: 2px solid rgb(1, 136, 12);
+}
+.upload-preview {
+  width: 440px;
+  display: grid;
+  grid-gap: 14px;
+  margin: 4px 2px;
+  overflow: hidden;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  border: 1px solid rgb(136, 1, 1);
+}
+.upload-preview .image {
+  height: 260px;
+  width: 100%;
+  overflow: hidden;
+}
+.upload-preview.double,
+.upload-preview.triple {
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 2fr;
+}
+.upload-preview.double .image:nth-child(1),
+.upload-preview.double .image:nth-child(1) {
+  grid-area: first;
+}
+.upload-preview.triple .image:nth-child(2) {
+  grid-area: middl;
+}
+.upload-preview.double .image:nth-child(2),
+.upload-preview.triple .image:nth-child(3) {
+  grid-area: last;
+}
+.upload-preview.double .image img,
+.upload-preview.triple .image img {
+  width: 130%;
+  object-fit: cover;
+}
+.upload-preview.triple {
+  grid-template-areas:
+    "first middl"
+    "last  last";
+}
+.upload-preview.double {
+  grid-template-areas:
+    "first last"
+    "first last";
+}
+.upload-preview span {
+  color: rgb(136, 1, 1);
+}
+button {
+  width: 100%;
+  padding: 10px;
+}
