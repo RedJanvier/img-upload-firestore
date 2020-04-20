@@ -1,0 +1,23 @@
+{
+  "name": "img-upload-firestore",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "gh-pages -d ./public --branch master"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RedJanvier/img-upload-firestore.git"
+  },
+  "keywords": [],
+  "author": "RedJanvier",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/RedJanvier/img-upload-firestore/issues"
+  },
+  "homepage": "https://github.com/RedJanvier/img-upload-firestore#readme",
+  "devDependencies": {
+    "gh-pages": "^2.2.0"
+  }
+}
