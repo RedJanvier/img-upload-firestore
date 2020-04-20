@@ -15,6 +15,14 @@
         <div class="upload-section">
             <form class="upload-form">
                 <div class="form-input">
+                    <label for="title">Title </label></br>
+                    <input type="text" name="title" class="form-input_field">
+                </div>
+                <div class="form-input">
+                    <label for="description">Description </label></br>
+                    <textarea type="text" name="description" class="form-input_field"></textarea>
+                </div>
+                <div class="form-input">
                     <label for="image">Choose an image to upload </label></br>
                     <input type="file" max="1" accept=".jpg,.png,.jpeg" name="image" class="form-input_field">
                 </div>
@@ -32,22 +40,24 @@
     </main>
     <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-firestore.js"></script>
     
     <script>
     // Your web app's Firebase configuration
     var firebaseConfig = {
-        apiKey: "AIzaSyDi1uoXsXmf7S94-8itejnm1KbZJxatamU",
-        authDomain: "social-ape-1.firebaseapp.com",
-        databaseURL: "https://social-ape-1.firebaseio.com",
-        projectId: "social-ape-1",
-        storageBucket: "social-ape-1.appspot.com",
-        messagingSenderId: "227625113788",
-        appId: "1:227625113788:web:4934e4e0987597d43718b9",
-        measurementId: "G-MSFJ3QT5BK"
+        apiKey: "AIzaSyBet1oDErX9hqnbETjtFeDskzCJmg-g4F0",
+        authDomain: "redjanvier.firebaseapp.com",
+        databaseURL: "https://redjanvier.firebaseio.com",
+        projectId: "redjanvier",
+        storageBucket: "redjanvier.appspot.com",
+        messagingSenderId: "882664770377",
+        appId: "1:882664770377:web:e87a703106c8ba5e13a898",
+        measurementId: "G-RXY7RHN7TG"
     };
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
         const storage = firebase.storage();
+        const db = firebase.firestore();
     </script>
     <script src="./js/main.js"></script>
 </body>
