@@ -4,23 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Image Upload</title>
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
     <main>
         <div class="upload-section">
             <form class="upload-form">
                 <div class="form-input">
-                    <label for="image">Choose an image to upload </label>
+                    <label for="image">Choose an image to upload </label></br>
                     <input type="file" max="1" accept=".jpg,.png,.jpeg" name="image" class="form-input_field">
                 </div>
                 <div class="form-input">
-                    <input type="submit" value="Submit photo" class="form-input_field">
+                    <button type="submit" class="form-input_field">Upload</button>
                 </div>
             </form>
         </div>
         <div class="upload-preview">
             <img src="">
-            <span class="upload-preview_placeholder-txt">
+            <span>
                 No file selected...
             </span>
         </div>
